@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>After Hours</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://intweb.bucks.ac.uk/~22015559/Mainstream%20Music/css.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Albums</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="http://intweb.bucks.ac.uk/~22015559/Mainstream%20Music/home.html">Home</a></li>
+		<li class="active"><a href="http://intweb.bucks.ac.uk/~22015559/Mainstream%20Music/afterhours.html">After Hours</a></li>
+        <li><a href="http://intweb.bucks.ac.uk/~22015559/Mainstream%20Music/blonde.html">Blonde</a></li>
+        <li><a href="http://intweb.bucks.ac.uk/~22015559/Mainstream%20Music/mbdtf.html">MBDTF</a></li>
+		<li><a href="http://intweb.bucks.ac.uk/~22015559/Mainstream%20Music/2014foresthillsdrive.html">2014 Forest Hills Drive</a></li>
+		<li><a href="http://intweb.bucks.ac.uk/~22015559/Mainstream%20Music/takecare.html">Take Care</a></li>
+		<li><a href="http://intweb.bucks.ac.uk/~22015559/Mainstream%20Music/B&B.html">Beerbongs & Bentleys</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Mainstream Music</h1>      
+    <h2>Keep up to date with the best albums this decade!</h2>
+  </div>
+</div>
+  
+  <style>
+  p {
+  text-align: center;
+  }
+  h3 {
+  text-align: center;
+  }
+  </style>
+  <h3>After Hours</h3><br>
+  <p>This is TheWeeknd's most recent album and was released on 20th March 2020. It is his 6th album and consists of 14 songs.</p>
+  <p>There is also a deluxe version of the album which added an extra 3 songs to the album a few weeks after the release of the album.</p>
+  <p>The album is 56 minutes long and contains singles including "Heartless" and "Blinding Lights" </p>
+  
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<h3>After Hours - TheWeeknd</h3>
+			<img src="http://intweb.bucks.ac.uk/~22015559/images/weeknd4.jpg" width="350" height="350" style="vertical-align:bottom">
+			<div class="container-fluid bg-3 text-center"></div>
+		</div>
+		<div class="column">
+			<body onload="imageLoad()">
+				<h3>Discography</h3>
+				<p>
+					<img src="http://intweb.bucks.ac.uk/~22015559/images/weeknd0.jpg" name="animImage" alt="weeknd" width="350" height="350" style="vertical-align:bottom">
+					<form name="animateform" style="padding-left:25px">
+						<!-- The onlclick events use the DOM to reference the image but dynamically change the "src" -->
+						<!-- Remember [1] we can also reference images by enumerating the DOM image array -->
+						<!-- Remember [2] if the URL/path references a subdirectory to escape the "\" with another "\"
+						e.g. document.smileys.src='images\\smile1.PNG -->
+						<input type="button" value="Start" name="runAnim" onClick="checkButton()">
+						<input type="text" name="speed" value=250>milliseconds
+					</form>
+
+					<script type="text/javascript">
+						//Sets the values of the fields on the runAnim form using the DOM
+						document.animateform.runAnim.value = "Start";
+						document.animateform.speed.value = 500;
+					</script>
+			</body>
+
+			<script type="text/javascript">
+				weeknds = new Array(5)
+				var frame = 0;
+				var timeout_state = null;
+
+				//Preloads image into the browser cache ready for use
+				function imageLoad() {
+					for (i = 0; i <= 4; i++) {
+						weeknds[i] = new Image();
+						//Remember - if the URL/path references a subdirectory to escape the "\" with another "\" e.g. document.smileys.src='images\\smile ...'
+						weeknds[i].src = "http://intweb.bucks.ac.uk/~22015559/images/\\weeknd" + i + ".jpg";
+					}
+				}
+
+				function animate() {
+					document.animImage.src = weeknds[frame].src;
+					frame = (frame + 1);
+					if (frame > 4) {
+						frame = 0;
+					}
+					//Recursive call to the animate function ...
+					timerId = setTimeout("animate()", document.animateform.speed.value);
+				}
+
+				function checkButton() {
+					if (document.animateform.runAnim.value == "Start") {
+						document.animateform.runAnim.value = "Stop";
+						animate();
+					}
+					else {
+						document.animateform.runAnim.value = "Start";
+						clearTimeout(timerId);
+						timerId = null;
+					}
+				}
+			</script>
+		</div>
+		<div class="col-sm-4">
+			<h3>Tracklist</h3>
+			<img src="http://intweb.bucks.ac.uk/~22015559/images/weekndtracklist.jpg" width="350" height="350" style="vertical-align:bottom">
+			<div class="container-fluid bg-3 text-center"></div>
+		</div>
+	</div>
+</div>
+
+
+			<footer class="container-fluid text-center">
+				<p>Created by Max Roe</p>
+			</footer>
+
+</body>
+
+</html>
